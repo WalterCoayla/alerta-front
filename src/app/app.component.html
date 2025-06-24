@@ -1,0 +1,25 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1 class="project-title">Alerta Moquegua</h1>
+    <nav class="app-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <button (click)="navigateToHome()">Inicio</button>
+        </li>
+        <li class="nav-item">
+          <button (click)="navigateToAlert()">Alertas</button>
+        </li>
+        <li class="nav-item">
+          <button (click)="navigateToMap()">Mapa</button>
+        </li>
+        <li class="nav-item">
+          <button>Configuración</button>
+        </li>
+        </ul>
+    </nav>
+  </header>
+  <main class="app-main">
+        <router-outlet></router-outlet>
+  </main>
+  
+</div>

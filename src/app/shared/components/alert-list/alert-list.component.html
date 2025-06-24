@@ -1,0 +1,54 @@
+<div class="alert-list-container">
+  <h4>Listado de Alertas</h4>
+    <mat-form-field appearance="outline"> <mat-label>Buscar Alerta</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ej. robo, accidente" #input>
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Descripción </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container> -->
+
+    <ng-container matColumnDef="latitude">
+      <th mat-header-cell *matHeaderCellDef> Latitud </th>
+      <td mat-cell *matCellDef="let element"> {{element.latitude}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="longitude">
+      <th mat-header-cell *matHeaderCellDef> Longitud </th>
+      <td mat-cell *matCellDef="let element"> {{element.longitude}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="incidentType">
+      <th mat-header-cell *matHeaderCellDef> Tipo </th>
+      <td mat-cell *matCellDef="let element"> {{element.incidentType}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <th mat-header-cell *matHeaderCellDef> Fecha Creación </th>
+      <td mat-cell *matCellDef="let element"> {{element.created_at | date:'short'}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Seleccionar página de alertas">
+  </mat-paginator>
+
+  <div *ngIf="dataSource.data.length === 0" class="no-data-message">
+    No hay alertas registradas aún.
+  </div>
+  <div *ngIf="dataSource.data.length === 0 && dataSource.filter" class="no-data-message">
+    No se encontraron resultados para el filtro.
+  </div>
+</div>

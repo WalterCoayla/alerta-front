@@ -1,0 +1,13 @@
+<h4 mat-dialog-title>Detalles de la Alerta #{{data.id}}</h4>
+
+<mat-dialog-content class="mat-typography">
+  <!-- <p><strong>Descripción:</strong> {{data.description}}</p> -->
+  <p><strong>Latitud:</strong> {{data.latitude}}</p>
+  <p><strong>Longitud:</strong> {{data.longitude}}</p>
+  <p><strong>Longitud:</strong> {{data.incidentType}}</p>
+  <p><strong>Fecha/Hora:</strong> {{data.created_at | date:'medium'}}</p>
+  </mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-flat-button color="primary" (click)="onNoClick()">Cerrar</button>
+</mat-dialog-actions>

@@ -1,0 +1,24 @@
+/* src/app/components/alert-list/alert-list.component.css */
+.alert-list-container {
+  padding: 20px;
+  margin: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+mat-form-field {
+  width: 100%; /* O el ancho que desees */
+  margin-bottom: 20px; /* Espacio debajo del campo de filtro */
+}
+
+table {
+  width: 100%;
+}
+
+.no-data-message {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}

@@ -1,0 +1,179 @@
+.panic-button-container {
+  padding: 20px;
+  text-align: center;
+  max-width: 400px; /* Un tamaño más pequeño para el contenedor del botón */
+  margin: 20px auto;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Espacio entre los elementos */
+}
+
+.panic-button-container h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.location-info {
+  background-color: #e6f7ff; /* Un azul claro para la info */
+  border: 1px solid #91d5ff;
+  border-radius: 5px;
+  padding: 10px 15px;
+  width: 90%;
+  text-align: left;
+  font-size: 0.95em;
+  color: #333;
+}
+
+.location-info p {
+  margin: 5px 0;
+}
+
+.location-info strong {
+  color: #0056b3; /* Un azul más oscuro */
+}
+
+.loading-message {
+  color: #007bff;
+  font-style: italic;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+button {
+  background-color: #dc3545; /* Rojo de emergencia */
+  color: white;
+  margin-top: 0;
+  font-size: 1.6em; /* Un poco más grande para el botón principal */
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px; /* Botón más redondeado */
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espacio entre icono y texto */
+  width: 90%;
+  max-width: 300px;
+}
+
+button:hover:not([disabled]) {
+  background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+button:active:not([disabled]) {
+  transform: translateY(0); /* Efecto de "clic" */
+}
+
+button[disabled] {
+  background-color: #cccccc; /* Gris para deshabilitado */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.incident-type-selection {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%; /* Asegúrate de que tenga un ancho definido */
+  max-width: 400px; /* Limita el ancho máximo para evitar que se extienda demasiado */
+  text-align: left;
+  margin-left: auto; /* Centrar el bloque */
+  margin-right: auto; /* Centrar el bloque */
+}
+
+.incident-type-selection h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  text-align: center; /* Centrar el título "Tipo de Incidente" */
+}
+
+mat-button-toggle-group {
+  display: flex;
+  flex-wrap: wrap; /* ¡Clave! Permite que los elementos pasen a la siguiente línea */
+  gap: 8px; /* Espacio entre los botones */
+  justify-content: center; /* Centra los botones horizontalmente en el grupo */
+  width: 100%; /* Ocupa todo el ancho de su contenedor */
+}
+
+mat-button-toggle {
+  /* Calcula el ancho para que quepan dos columnas con el gap */
+  flex-basis: calc(50% - 4px); /* (50% del ancho del grupo - la mitad del gap) */
+  /* Puedes ajustar esto: si quieres un gap de 10px, sería calc(50% - 5px) */
+  box-sizing: border-box; /* Asegura que padding y border no aumenten el ancho */
+
+  /* Estilo general del botón */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  color: #555;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+  display: flex; /* Para alinear ícono y texto */
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Espacio entre ícono y texto */
+  text-align: center; /* Centrar texto dentro del botón */
+}
+
+mat-button-toggle:hover {
+  background-color: #cee4f7;
+}
+
+mat-button-toggle.mat-button-toggle-checked {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.panic-button-container {
+  /* Elimina propiedades de margen o posicionamiento que lo harían relativo */
+  /* margin: 20px auto; */ /* <-- Quita esto si lo tenías */
+  /* max-width: 400px; */ /* <-- Esto puede quedarse o ajustarse */
+
+  position: fixed; /* ¡Clave! Lo fija a la ventana de visualización */
+  bottom: 20px;    /* 20px desde la parte inferior */
+  right: 20px;     /* 20px desde la parte derecha */
+  z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+
+  /* Asegúrate de que el tamaño sea manejable cuando esté fijo */
+  width: 380px; /* O un ancho fijo que se vea bien en todas las pantallas */
+  max-width: 90%; /* Para pantallas más pequeñas, que no se desborde */
+  background-color: #fefefe;
+  border-radius: 15px; /* Bordes un poco más redondeados */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* Sombra más pronunciada para destacarlo */
+  padding: 25px; /* Más padding para que respire */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center; /* Centra el contenido dentro del contenedor */
+}
+
+.panic-button-container h3 {
+  color: #333;
+  margin-top: 0; /* Asegura que no haya margen superior por defecto */
+  margin-bottom: 15px;
+  font-size: 1.6em; /* Un poco más grande para el título */
+}
+
+/* Ajustes para los elementos internos del contenedor fijo */
+.location-info,
+.incident-type-selection,
+.incident-type-selection mat-button-toggle-group,
+button {
+  width: 100%; /* Asegura que los elementos internos ocupen todo el ancho del contenedor fijo */
+  max-width: 350px; /* Limita el ancho de los elementos internos si el contenedor es muy grande */
+  margin: 0 auto; /* Centrar estos elementos dentro del contenedor fijo */
+}

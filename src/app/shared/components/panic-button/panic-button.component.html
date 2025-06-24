@@ -1,0 +1,34 @@
+<div class="panic-button-container">
+ 
+  <div class="location-info">
+    <p *ngIf="currentLatitude !== null && currentLongitude !== null">
+      <b>
+        <mat-icon>my_location</mat-icon> Tu Ubicación:</b> <br>
+      Lat: <strong>{{ currentLatitude | number:'1.5-5' }}</strong>, Lon: <strong>{{ currentLongitude | number:'1.5-5' }}</strong>
+    </p>
+    <p *ngIf="currentLatitude === null && locationError === null" class="loading-message">
+      Obteniendo tu ubicación...
+    </p>
+    <p *ngIf="locationError" class="error-message">
+      {{ locationError }}
+    </p>
+  </div>
+
+  <div class="incident-type-selection">
+    <h4>Tipo de Incidente:</h4>
+    <mat-button-toggle-group
+      name="incidentType"
+      [(ngModel)]="selectedIncidentType"
+      (ngModelChange)="onIncidentTypeChange()" aria-label="Tipo de Incidente"
+    >
+      <mat-button-toggle *ngFor="let type of incidentTypes" [value]="type.value">
+        <mat-icon>{{ type.icon }}</mat-icon> {{ type.label }}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <button (click)="sendPanicAlert()" [disabled]="isSendingAlert || currentLatitude === null || selectedIncidentType === null">
+    <i class="fas fa-exclamation-triangle"></i>
+    {{ isSendingAlert ? 'Enviando Alerta...' : '¡Botón de Pánico!' }}
+  </button>
+</div>

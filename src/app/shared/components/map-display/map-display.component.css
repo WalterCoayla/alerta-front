@@ -1,0 +1,53 @@
+/* src/app/components/map/map.component.css */
+
+.map-container {
+  position: relative; /* Contenedor para posicionar elementos dentro de él */
+  height: 100vh; /* O la altura que desees para tu mapa */
+  width: 100%;
+}
+
+#map {
+  height: 100%; /* El mapa ocupa todo el contenedor */
+  width: 100%;
+  z-index: 0; /* Asegura que el mapa esté en el fondo */
+}
+
+.legend {
+  position: absolute;
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la parte derecha */
+  background-color: rgba(255, 255, 255, 0.8); /* Blanco semi-transparente */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Asegura que la leyenda esté por encima del mapa */
+}
+
+.legend h3 {
+  margin-top: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.legend-color-box {
+  width: 15px; /* Debe coincidir con el tamaño del marcador divIcon */
+  height: 15px; /* Debe coincidir con el tamaño del marcador divIcon */
+  border-radius: 50%; /* Para que sea circular como el marcador */
+  border: 1px solid #ccc; /* Un borde sutil */
+  margin-right: 8px;
+  flex-shrink: 0; /* Evita que se encoja */
+}

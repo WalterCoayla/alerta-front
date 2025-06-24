@@ -1,0 +1,14 @@
+<div class="map-container">
+  
+  <div id="map"></div>
+
+  <div class="legend">
+    <h5>Leyenda de Alertas</h5>
+    <ul>
+      <li *ngFor="let item of legendItems">
+        <span class="legend-color-box" [style.background-color]="item.color"></span>
+        {{ item.type }}
+      </li>
+    </ul>
+  </div>
+</div>
