@@ -1,0 +1,43 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ajusta según tus necesidades de layout */
+  background-color: #f0f2f5; /* Un color de fondo suave */
+  padding: 20px;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5; /* Color primario de Material */
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  height: 48px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+mat-card-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}

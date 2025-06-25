@@ -144,6 +144,9 @@ mat-button-toggle.mat-button-toggle-checked {
   position: fixed; /* ¡Clave! Lo fija a la ventana de visualización */
   bottom: 20px;    /* 20px desde la parte inferior */
   right: 20px;     /* 20px desde la parte derecha */
+  left: 50%;     /* Lo mueve al 50% del ancho de la pantalla desde la izquierda */
+  transform: translateX(-50%); /* Lo mueve hacia atrás la mitad de su propio ancho para centrarlo */
+  
   z-index: 1000;   /* Asegura que esté por encima de otros elementos */
 
   /* Asegúrate de que el tamaño sea manejable cuando esté fijo */

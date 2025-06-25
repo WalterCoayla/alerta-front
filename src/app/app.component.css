@@ -53,3 +53,59 @@
   text-align: center;
   padding: 0.5rem;
 }
+/* src/app/app.component.css */
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.welcome-text {
+  font-size: 0.65em; /* Reduce el tamaño del texto. Puedes ajustar el valor (ej: 0.9em, 14px) */
+  color: #e0e0e0; /* Cambia el color del texto. Puedes usar un código hexadecimal, RGB, o un nombre de color. Este es un gris claro. */
+  margin-right: 15px; /* Añade un poco de espacio a la derecha si lo necesitas */
+}
+
+/* Opcional: Estilos para el contenedor de autenticación si aún los tienes */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px); /* Ajusta si tu toolbar tiene altura fija */
+  background-color: #f0f2f5;
+  padding: 20px;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+mat-card-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  height: 48px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+mat-card-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}

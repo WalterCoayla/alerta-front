@@ -1,4 +1,4 @@
-<div class="app-container">
+<!-- <div class="app-container">
   <header class="app-header">
     <h1 class="project-title">Alerta Moquegua</h1>
     <nav class="app-nav">
@@ -23,3 +23,27 @@
   </main>
   
 </div>
+ -->
+<mat-toolbar color="primary">
+  <span title="Alerta Moquegua">
+    <img src="assets/logo_ico.png" alt="Logo" height="25">
+  </span>
+  <span class="spacer"></span>
+  <ng-container *ngIf="authService.currentUser | async as user">
+    
+    <button mat-button (click)="navigateToHome()">Home</button>
+    <button mat-button (click)="navigateToAlert()">Alertas</button>
+    <button mat-button (click)="navigateToMap()">Mapa</button>
+    <span class="welcome-text">{{user.name}}</span>
+    <button mat-button (click)="logout()">Cerrar Sesión</button>
+  </ng-container>
+  <ng-container *ngIf="!(authService.currentUser | async)">
+    <button mat-button routerLink="/login">Acceder</button>
+    <button mat-button routerLink="/register">Registrarse</button>
+  </ng-container>
+  
+</mat-toolbar>
+
+
+<router-outlet></router-outlet>
+

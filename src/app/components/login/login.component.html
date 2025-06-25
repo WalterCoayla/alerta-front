@@ -1,0 +1,30 @@
+<div class="auth-container">
+  
+  <mat-card>
+    <mat-card-title>
+      <img src="assets/logo01.png" alt="" width="60%"><br>
+      Iniciar Sesión</mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput type="email" [(ngModel)]="credentials.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" [(ngModel)]="credentials.password" name="password" required>
+        </mat-form-field>
+
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <button mat-flat-button color="primary" type="submit" class="full-width">Iniciar Sesión</button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      ¿No tienes una cuenta? <a [routerLink]="['/register']">Registrarse</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
