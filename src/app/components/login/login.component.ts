@@ -36,7 +36,7 @@ export class LoginComponent {
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
         console.log('Inicio de sesión exitoso', response);
-        this.router.navigate(['/alerts']); // Redirige al listado de alertas
+        this.router.navigate(['/boton']); // Redirige al listado de alertas
       },
       error: (err) => {
         console.error('Error en el inicio de sesión', err);
